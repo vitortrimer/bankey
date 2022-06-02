@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
     
     let stackView = UIStackView()
@@ -15,6 +23,8 @@ class LoginViewController: UIViewController {
     let errorLabel = UILabel()
     let bankeyTitle = UILabel()
     let bankeyText = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var username: String? {
         return loginView.usernameTextfield.text
@@ -117,12 +127,13 @@ extension LoginViewController {
             return
         }
         
-        if username != "vitor" && password != "works" {
+        if username != "1" && password != "1" {
             configureView(withMessage: "Wrong username or password")
             return
         }
         
         // redirect
+        delegate?.didLogin()
         submitButton.configuration?.showsActivityIndicator = true
         submitButton.isEnabled = false
     }

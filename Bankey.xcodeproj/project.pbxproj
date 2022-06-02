@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40CD49D2848E6D50027F336 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40CD49C2848E6D50027F336 /* DummyViewController.swift */; };
 		A478C4B4283DA29F00CD413F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A478C4B3283DA29F00CD413F /* LoginView.swift */; };
 		A4B990022841041600582362 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B990012841041600582362 /* OnboardingContainerViewController.swift */; };
 		A4B990042843E2A200582362 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B990032843E2A100582362 /* OnboardingViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A40CD49C2848E6D50027F336 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		A478C4B3283DA29F00CD413F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A4B990012841041600582362 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		A4B990032843E2A100582362 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				A4D31A9428331822002C6B44 /* LoginViewController.swift */,
 				A478C4B3283DA29F00CD413F /* LoginView.swift */,
+				A40CD49C2848E6D50027F336 /* DummyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A478C4B4283DA29F00CD413F /* LoginView.swift in Sources */,
+				A40CD49D2848E6D50027F336 /* DummyViewController.swift in Sources */,
 				A4D31A9528331822002C6B44 /* LoginViewController.swift in Sources */,
 				A4B990042843E2A200582362 /* OnboardingViewController.swift in Sources */,
 				A4D31A9128331822002C6B44 /* AppDelegate.swift in Sources */,
