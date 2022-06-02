@@ -39,7 +39,14 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.style()
         self.layout()
-        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        submitButton.configuration?.showsActivityIndicator = false
+        submitButton.isEnabled = true
+        loginView.usernameTextfield.text = ""
+        loginView.passwordTextfield.text = ""
     }
 }
 
@@ -132,10 +139,12 @@ extension LoginViewController {
             return
         }
         
-        // redirect
-        delegate?.didLogin()
         submitButton.configuration?.showsActivityIndicator = true
         submitButton.isEnabled = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.delegate?.didLogin()
+        }
     }
     
     private func configureView(withMessage message: String) {
