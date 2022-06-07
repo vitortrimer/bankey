@@ -16,19 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankeylogo" translatesAutoresizingMaskIntoConstraints="NO" id="NwF-TQ-WHI">
-                                <rect key="frame" x="147" y="388" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="DJB-0m-8Cf"/>
-                                    <constraint firstAttribute="height" constant="120" id="Vuv-W9-3UC"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Z7-hr-mdi">
+                                <rect key="frame" x="165" y="378.5" width="84.5" height="139"/>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="126"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" systemColor="systemBackgroundColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="tintColor"/>
                         <constraints>
-                            <constraint firstItem="NwF-TQ-WHI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CPx-fc-d1P"/>
-                            <constraint firstItem="NwF-TQ-WHI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="g6M-qH-d0F"/>
+                            <constraint firstItem="3Z7-hr-mdi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="n3k-mm-Ubo"/>
+                            <constraint firstItem="3Z7-hr-mdi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xrJ-K3-QQi"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,7 +37,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bankeylogo" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
