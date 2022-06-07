@@ -55,6 +55,7 @@ extension LoginView {
         self.passwordTextfield.translatesAutoresizingMaskIntoConstraints = false
         self.passwordTextfield.placeholder = "Password"
         self.passwordTextfield.isSecureTextEntry = true
+        self.passwordTextfield.enablePasswordToggle()
         self.passwordTextfield.delegate = self
     }
     
