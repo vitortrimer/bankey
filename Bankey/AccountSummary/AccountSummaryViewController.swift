@@ -8,12 +8,21 @@
 import UIKit
 
 class AccountSummaryViewController: UIViewController {
-    let games = ["Pacman", "Space Invaders", "Space Patrol"]
+    
+    struct Profile {
+        let firstName: String
+        let lastName: String
+    }
+    
+    var profile: Profile?
+    var accounts: [AccountSummaryCell.ViewModel] = []
+    
+    var header = AccountSummaryHeaderView(frame: .zero)
     var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.fetchAccounts()
         setup()
         layout()
     }
@@ -30,7 +39,6 @@ extension AccountSummaryViewController {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        let header = AccountSummaryHeaderView(frame: .zero)
         var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
         header.frame.size = size
@@ -48,15 +56,35 @@ extension AccountSummaryViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    private func fetchAccounts() {
+        let savings = AccountSummaryCell.ViewModel(accountType: .Banking, accountName: "Basic Savings", balance: 928328.23)
+        let chequing = AccountSummaryCell.ViewModel(accountType: .Banking, accountName: "No-Fee All-In chequing", balance: 132821.34)
+        let visa = AccountSummaryCell.ViewModel(accountType: .CreditCard, accountName: "Ben Visa Vale", balance: 1000.00)
+        let masterCard = AccountSummaryCell.ViewModel(accountType: .CreditCard, accountName: "AAdvantage Platinum", balance: 12658.32)
+        let investment1 = AccountSummaryCell.ViewModel(accountType: .Investment, accountName: "Tax-Free Saver", balance: 500.00)
+        let investment2 = AccountSummaryCell.ViewModel(accountType: .Investment, accountName: "Growth Fund", balance: 4328.90)
+        
+        accounts.append(savings)
+        accounts.append(chequing)
+        accounts.append(visa)
+        accounts.append(masterCard)
+        accounts.append(investment1)
+        accounts.append(investment2)
+    }
 }
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        games.count
+        accounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard !accounts.isEmpty else { return UITableViewCell() }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID, for: indexPath) as! AccountSummaryCell
+        cell.configure(with: accounts[indexPath.row])
+        
         return cell
     }
 }
