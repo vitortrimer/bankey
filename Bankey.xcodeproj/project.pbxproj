@@ -18,13 +18,13 @@
 		A4B13DBA284E398200F15E56 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B13DB9284E398200F15E56 /* AccountSummaryCell.swift */; };
 		A4B13DBC284ED83C00F15E56 /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B13DBB284ED83C00F15E56 /* DecimalUtils.swift */; };
 		A4B13DBE284ED89100F15E56 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B13DBD284ED89100F15E56 /* CurrencyFormatter.swift */; };
+		A4B13DC0284F70B800F15E56 /* CurrencyFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B13DBF284F70B800F15E56 /* CurrencyFormatterTests.swift */; };
 		A4B990022841041600582362 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B990012841041600582362 /* OnboardingContainerViewController.swift */; };
 		A4B990042843E2A200582362 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B990032843E2A100582362 /* OnboardingViewController.swift */; };
 		A4D31A9128331822002C6B44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D31A9028331822002C6B44 /* AppDelegate.swift */; };
 		A4D31A9528331822002C6B44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D31A9428331822002C6B44 /* LoginViewController.swift */; };
 		A4D31A9A28331824002C6B44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D31A9928331824002C6B44 /* Assets.xcassets */; };
 		A4D31A9D28331824002C6B44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D31A9B28331824002C6B44 /* LaunchScreen.storyboard */; };
-		A4D31AA828331824002C6B44 /* BankeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D31AA728331824002C6B44 /* BankeyTests.swift */; };
 		A4D31AB228331824002C6B44 /* BankeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D31AB128331824002C6B44 /* BankeyUITests.swift */; };
 		A4D31AB428331824002C6B44 /* BankeyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D31AB328331824002C6B44 /* BankeyUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +58,7 @@
 		A4B13DB9284E398200F15E56 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		A4B13DBB284ED83C00F15E56 /* DecimalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtils.swift; sourceTree = "<group>"; };
 		A4B13DBD284ED89100F15E56 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		A4B13DBF284F70B800F15E56 /* CurrencyFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTests.swift; sourceTree = "<group>"; };
 		A4B990012841041600582362 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		A4B990032843E2A100582362 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A4D31A8D28331822002C6B44 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +68,6 @@
 		A4D31A9C28331824002C6B44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4D31A9E28331824002C6B44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4D31AA328331824002C6B44 /* BankeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4D31AA728331824002C6B44 /* BankeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankeyTests.swift; sourceTree = "<group>"; };
 		A4D31AAD28331824002C6B44 /* BankeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D31AB128331824002C6B44 /* BankeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankeyUITests.swift; sourceTree = "<group>"; };
 		A4D31AB328331824002C6B44 /* BankeyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankeyUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		A4D31AA628331824002C6B44 /* BankeyTests */ = {
 			isa = PBXGroup;
 			children = (
-				A4D31AA728331824002C6B44 /* BankeyTests.swift */,
+				A4B13DBF284F70B800F15E56 /* CurrencyFormatterTests.swift */,
 			);
 			path = BankeyTests;
 			sourceTree = "<group>";
@@ -287,6 +287,7 @@
 					};
 					A4D31AA228331824002C6B44 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = A4D31A8C28331822002C6B44;
 					};
 					A4D31AAC28331824002C6B44 = {
@@ -368,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4D31AA828331824002C6B44 /* BankeyTests.swift in Sources */,
+				A4B13DC0284F70B800F15E56 /* CurrencyFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,15 +584,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T73532284R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = trimer.vitor.BankeyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bankey.app/Bankey";
@@ -603,11 +611,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T73532284R;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = trimer.vitor.BankeyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
