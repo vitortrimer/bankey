@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
-    let dummyVC = DummyViewController()
     let mainViewController = MainViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
@@ -27,12 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
-        dummyVC.delegate = self
         
+        let vc = mainViewController
+        vc.statusBar()
         
-        
-//        window?.rootViewController = loginViewController
-        window?.rootViewController = AccountSummaryViewController()
+        window?.rootViewController = loginViewController
+//        window?.rootViewController = vc
         
         mainViewController.selectedIndex = 0
         
