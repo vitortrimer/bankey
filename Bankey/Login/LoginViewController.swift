@@ -33,12 +33,25 @@ class LoginViewController: UIViewController {
         return loginView.passwordTextfield.text
     }
     
+    // MARK: - Animations
+    var leadingEdgeOnScreen: CGFloat = 16
+    var leadingEdgeOffScreen: CGFloat = -1000
+    
+    var titleLeadingAnchor: NSLayoutConstraint?
+    var subtitleLeadingAnchor: NSLayoutConstraint?
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.style()
         self.layout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        animate()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -91,6 +104,22 @@ extension LoginViewController {
         view.addSubview(errorLabel)
         
         NSLayoutConstraint.activate([
+            bankeyText.topAnchor.constraint(equalToSystemSpacingBelow: bankeyTitle.bottomAnchor, multiplier: 3),
+            bankeyText.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            bankeyTitle.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+        ])
+        
+        titleLeadingAnchor = bankeyTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        titleLeadingAnchor?.isActive = true
+        
+        subtitleLeadingAnchor = bankeyText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        subtitleLeadingAnchor?.isActive = true
+        
+        loginView.alpha = 0
+        submitButton.alpha = 0
+        
+        NSLayoutConstraint.activate([
+            
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 2),
@@ -104,13 +133,6 @@ extension LoginViewController {
             errorLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
             
             loginView.topAnchor.constraint(equalToSystemSpacingBelow: bankeyText.bottomAnchor, multiplier: 2),
-            bankeyText.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: bankeyText.trailingAnchor, multiplier: 2),
-            
-            bankeyText.topAnchor.constraint(equalToSystemSpacingBelow: bankeyTitle.bottomAnchor, multiplier: 3),
-            bankeyTitle.leadingAnchor.constraint(equalTo: bankeyText.leadingAnchor),
-            bankeyTitle.trailingAnchor.constraint(equalTo: bankeyTitle.trailingAnchor),
-            bankeyTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 }
@@ -150,5 +172,31 @@ extension LoginViewController {
     private func configureView(withMessage message: String) {
         errorLabel.isHidden = false
         errorLabel.text = message
+    }
+}
+
+
+// MARK: - Animations
+extension LoginViewController {
+    private func animate() {
+        let titleAnimator = UIViewPropertyAnimator(duration: 0.5, curve: .easeInOut) {
+            self.titleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        
+        let subtitleAnimator = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut) {
+            self.subtitleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        
+        let formAnimator = UIViewPropertyAnimator(duration: 2, curve: .easeInOut) {
+            self.loginView.alpha = 1
+            self.submitButton.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        
+        formAnimator.startAnimation()
+        titleAnimator.startAnimation()
+        subtitleAnimator.startAnimation()
     }
 }
