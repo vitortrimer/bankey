@@ -146,32 +146,46 @@ extension LoginViewController {
     }
     
     private func login() {
-        guard let username = username, let password = password else {
-            assertionFailure("Username / password should never be nil")
-            return
-        }
-        
-        if username.isEmpty || password.isEmpty {
-            configureView(withMessage: "Username / Password cannot be blank")
-            return
-        }
-        
-        if username != "1" && password != "1" {
-            configureView(withMessage: "Wrong username or password")
-            return
-        }
-        
-        submitButton.configuration?.showsActivityIndicator = true
-        submitButton.isEnabled = false
-        
+        self.submitButton.configuration?.showsActivityIndicator = true
+        self.submitButton.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            guard let username = self.username, let password = self.password else {
+                assertionFailure("Username / password should never be nil")
+                return
+            }
+            
+            if username.isEmpty || password.isEmpty {
+                self.configureView(withMessage: "Username / Password cannot be blank")
+                return
+            }
+            
+            if self.username != "1" && self.password != "1" {
+                self.configureView(withMessage: "Wrong username or password")
+                return
+            }
+            
+            
             self.delegate?.didLogin()
         }
     }
     
     private func configureView(withMessage message: String) {
+        submitButton.configuration?.showsActivityIndicator = false
+        submitButton.isEnabled = true
         errorLabel.isHidden = false
         errorLabel.text = message
+        shakeButton()
+    }
+    
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        
+        animation.isAdditive = true
+        submitButton.layer.add(animation, forKey: "shake")
     }
 }
 
