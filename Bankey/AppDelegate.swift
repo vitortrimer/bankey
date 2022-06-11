@@ -7,7 +7,7 @@
 
 import UIKit
 
-let appColor: UIColor = .systemBlue
+let appColor: UIColor = .link
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
